@@ -1,0 +1,27 @@
+{
+  "name": "nodemonnnn",
+  "version": "1.0.0",
+  "main": "abc.js",
+  "scripts": {
+    "start": "nodemon abc.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "suvash",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "boostrap": "^2.0.0",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.2",
+    "mongose": "^0.0.2-security",
+    "node": "^21.2.0",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "router": "^1.3.8"
+  }
+}
