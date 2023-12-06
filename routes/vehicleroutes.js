@@ -1,25 +1,29 @@
-const express = require("express");
-const router = express.Router();
-const Vehicles = require("../models/vehicles");
+// In vehicleroutes.js
 
-router.get("/gettallvehicles", async (req, res) => {
+const express = require('express');
+const router = express.Router();
+const Vehicles = require('../models/vehicles');
+
+// Define route for fetching all vehicles
+router.get('/gettallvehicles', async (req, res) => {
   try {
     const vehicles = await Vehicles.find({});
     res.status(200).json(vehicles);
   } catch (error) {
-    console.error("Error fetching vehicles:", error);
-    res.status(500).json({ message: "Failed to fetch vehicles" });
+    console.error('Error fetching vehicles:', error);
+    res.status(500).json({ message: 'Failed to fetch vehicles' });
   }
 });
-
-
-router.get("/gettvehiclesbyeid", async (req, res) => {
-  const vehicleid=req.body.vehicleid
+router.post('/gettvehiclesbyeid', async (req, res) => {
+  const vid = req.body.id; // Accessing the ID from the request body
   try {
-    const vehiclee = await Vehicles.findOne({_id:vehicleid});
-    res.send(vehiclee)
+    const vehicle = await Vehicles.findOne({ _id: vid });
+    res.status(200).json(vehicle);
   } catch (error) {
-    console.error("Error fetching vehicles:", error);
-    res.status(500).json({ message: "Failed to fetch vehicles" });
+    console.error('Error fetching vehicles:', error);
+    res.status(500).json({ message: 'Failed to fetch vehicles' });
   }
 });
+
+
+module.exports = router; // Export the router for use in app.js
