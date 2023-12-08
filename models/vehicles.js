@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const vehicleSchema = mongoose.Schema(
+ 
+ 
+ 
+ 
   {
     name: {
       type: String,
@@ -18,14 +22,14 @@ const vehicleSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    imageurls: {
-      type: [String], // Array of strings for image URLs
-      default: [],    // Default value as an empty array
-    },
-    currentbookings: {
-      type: [String], // Array of strings for current bookings (assuming booking IDs)
-      default: [],    // Default value as an empty array
-    },
+    imageurls: [],
+       // Array of strings for image URLs
+       // Default value as an empty array
+    
+    currentbookings: [],
+    // Array of strings for current bookings (assuming booking IDs)
+          // Default value as an empty array
+    
     type: {
       type: String,
       required: true,
