@@ -1,5 +1,3 @@
-// In vehicleroutes.js
-
 const express = require('express');
 const router = express.Router();
 const Vehicless = require('../models/vehicles');
@@ -15,8 +13,7 @@ router.get('/gettallvehicles', async (req, res) => {
   }
 });
 
-
-
+// Get vehicle by ID from request body
 router.post("/gettvehiclesbyeid", async (req, res) => {
   const { vid } = req.body; // Accessing the vid from the request body
 
@@ -31,9 +28,9 @@ router.post("/gettvehiclesbyeid", async (req, res) => {
     console.error('Error fetching vehicle:', error);
     res.status(500).json({ message: 'Failed to fetch vehicle' });
   }
+});
 
-
-
+// Another version of getting vehicle by ID (commented out)
 // router.post('/gettvehiclesbyeid', async (req, res) => {
 //   const vid = req.body.id; // Accessing the ID from the request body
 //   try {
@@ -43,8 +40,17 @@ router.post("/gettvehiclesbyeid", async (req, res) => {
 //     console.error('Error fetching vehicles:', error);
 //     res.status(500).json({ message: 'Failed to fetch vehicles' });
 //   }
+// });
+
+// Route for adding a new vehicle
+router.post("/addvehicle",async(req,res)=>{
+  try {
+    const newvehicle = new Vehicless(req.body);
+    await newvehicle.save();
+    res.send('New vehicle and data added');
+  } catch (error) {
+    res.status(400).json({ error });
+  }
 });
-
-
 
 module.exports = router; // Export the router for use in app.js
