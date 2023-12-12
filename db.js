@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // MongoDB Atlas connection string
 const username = "suvash_mern";
-const password = encodeURIComponent("@Nepal11"); // Encode special characters in the password
+const password = encodeURIComponent("Nepal12"); // Encode special characters in the password
 const clusterURL = "cluster0.rupk29l.mongodb.net";
 const databaseName = "automobile"; // Replace with your actual database name
 
