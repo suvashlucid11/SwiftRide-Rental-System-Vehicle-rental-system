@@ -11,7 +11,10 @@ const mongoURL = `mongodb+srv://${username}:${password}@${clusterURL}/${database
 mongoose.connect(mongoURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+<<<<<<< HEAD
 
+=======
+>>>>>>> suvash
 })
   .then(() => {
     console.log("MongoDB connected successfully");
